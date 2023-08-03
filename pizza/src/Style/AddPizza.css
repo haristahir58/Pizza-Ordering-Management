@@ -1,0 +1,127 @@
+/* AddPizza.css */
+
+/* Form container styles */
+div {
+    
+    margin: 0 auto;
+    /* padding: 20px; */
+    border-radius: 8px;
+
+  }
+  
+  /* Form input styles */
+  .formInput {
+    margin-bottom: 35px;
+  }
+  
+  .formInput label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .formInput input[type="text"],
+  .formInput input[type="number"],
+  .formInput input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .formInput input[type="file"] {
+    cursor: pointer;
+  }
+  
+  /* Button styles */
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Alert styles */
+  .alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Success message styles */
+  .success {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Optional: Center the form vertically on the page */
+
+  
+  /* Custom styles for the form header */
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Custom styles for the form input labels */
+  .formInput label {
+    font-weight: bold;
+  }
+  
+  /* Custom styles for the submit button */
+  .button {
+    width: 20%;
+    margin-top: 20px;
+  }
+  
+  /* Custom styles for the form fields */
+  .formInput input[type="text"],
+  .formInput input[type="number"] {
+    padding: 12px;
+  }
+  
+  /* Custom styles for the form file input */
+  .formInput input[type="file"] {
+    padding: 8px;
+  }
+  
+  /* Custom styles for the form background */
+  form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Custom styles for form container on smaller screens */
+  @media (max-width: 1366px) {
+    div {
+      max-width: 90%;
+    }
+  }
+  
+  /* Custom styles for form container on even smaller screens */
+  @media (max-width: 768px) {
+    div {
+      max-width: 100%;
+    }
+  }
+  

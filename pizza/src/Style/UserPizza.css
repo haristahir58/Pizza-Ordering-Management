@@ -1,0 +1,86 @@
+/* UserPizza.css */
+
+/* Container for the cards */
+.cardContainer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 723px;
+}
+
+/* Individual card style */
+.card1 {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 120px;
+}
+
+/* Image style */
+.cardImage img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistent card sizes */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top of the image */
+}
+
+/* Title style */
+.cardTitle1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Description style */
+.cardText {
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: rgb(67, 67, 67);
+}
+
+.cardText1 {
+text-align: center;
+margin-bottom: 27px;
+font-size: 21px;
+font-weight: bold;
+color: rgb(81, 18, 92);
+}
+
+
+/* Price style */
+.cardText:last-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Add to cart button style */
+.addToCartButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn5 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Optional: Center the cards if there are fewer than 3 cards per row */
+@media screen and (max-width: 768px) {
+  .cardContainer1 {
+    justify-content: center;
+  }
+}
