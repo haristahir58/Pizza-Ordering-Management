@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
+import { useCart } from './CartContext'; // Import the useCart hook
 import { Link } from 'react-router-dom';
 import '../Style/UserPizza.css';
 
 
 const UserPizza = () => {
+  const { dispatch } = useCart();
   const [pizza, setPizza] = useState([]);
 
   useEffect(() => {
@@ -14,6 +16,21 @@ const UserPizza = () => {
     let result = await fetch('/pizza');
     result = await result.json();
     setPizza(result);
+  };
+
+  const addToCart = (pizza) => {
+    // Generate a unique ID for the cart item
+    const uniqueId = generateUniqueId();
+
+    // Dispatch the ADD_TO_CART action with the pizza item and unique ID
+    dispatch({ type: 'ADD_TO_CART', payload: { ...pizza, id: uniqueId } });
+  };
+
+  // Function to generate a unique ID (you can use UUID or another method)
+  const generateUniqueId = () => {
+    // Implement your unique ID generation logic here (e.g., UUID)
+    // For simplicity, you can use a random number for demonstration
+    return Math.random().toString(36).substring(2, 15);
   };
 
   return (
@@ -38,9 +55,12 @@ const UserPizza = () => {
                 </div>
  
                 <div className='btn5'>
-                  <button className="addToCartButton">
-                    Add to Cart
-                  </button>
+                
+                <button
+              className="addToCartButton"
+              onClick={() => addToCart(item)} // Call addToCart with the pizza item
+              >Add to Cart
+              </button> 
                 </div>
               </div>
             ))}

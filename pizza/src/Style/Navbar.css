@@ -23,6 +23,24 @@
     padding: 15px;
     margin-right: 34px;
   }
+
+  /* Default styles for the cart quantity */
+.cart-quantity {
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0px 5px;
+  color: red;
+  position: relative;
+  bottom: 11px;
+}
+
+/* Additional styles to show the background when quantity is greater than 0 */
+.cart-quantity.show {
+  background-color: red; /* Set a background color when quantity is greater than 0 */
+  color: white; /* Text color when background is shown */
+}
+
   
   .nav-link:hover {
     color: red;

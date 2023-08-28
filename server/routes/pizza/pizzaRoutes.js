@@ -57,18 +57,33 @@ router.post('/pizza/new',upload.single('image'), async(req,res)=>{
 
 //For updating Pizza Details
 
-router.put('/pizza/:id',async(req,res)=>{
-    try{
-        const pizza = await Pizza.findOneAndUpdate({_id:req.params.id},req.body,{new:true})
-        if(!pizza){
-            res.status(404).json({message:"Pizza not found"})
+router.put('/pizza/:id', upload.single('image'), async (req, res) => {
+    try {
+        const imageUrl = req.file ? req.file.path : undefined;
+        const updatedData = {
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price,
+            imageUrl: imageUrl, // Update the imageUrl field with the file information
+        };
+
+        const updatedPizza = await Pizza.findOneAndUpdate(
+            { _id: req.params.id }, // Find the pizza by its unique ID
+            updatedData, // Use the updatedData object to update the pizza
+            { new: true } // Return the updated pizza after the update
+        );
+
+        if (!updatedPizza) {
+            return res.status(404).json({ message: "Pizza not found" });
         }
-        res.json(pizza)
+
+        // Respond with the updated pizza data
+        return res.json(updatedPizza);
+    } catch (err) {
+        // Handle any errors that occurred during the update process
+        return res.status(500).json({ message: err.message });
     }
-    catch(err){
-        res.status(500).json({message: err.message})
-    }
-})
+});
 
 //For deleting Pizza
 
